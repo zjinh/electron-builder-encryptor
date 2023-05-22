@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import asar from '@electron/asar'
+import asar from 'asar'
 import AdmZip from 'adm-zip'
 import { log } from 'builder-util'
 import { compileToBytenode, encAes, readAppAsarMd5 } from './encrypt'

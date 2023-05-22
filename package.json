@@ -1,6 +1,6 @@
 {
   "name": "@zjinh/electron-builder-encryptor",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "sideEffects": false,
   "author": "ZJINH",
   "description": "适用于electron-builder的加密打包工具",
@@ -21,9 +21,7 @@
     "url": "https://github.com/zjinh/electron-builder-encryptor/issues"
   },
   "homepage": "https://github.com/zjinh/electron-builder-encryptor#readme",
-  "files": [
-    "dist/index.ts"
-  ],
+  "files": ["dist"],
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -36,7 +34,7 @@
   },
   "dependencies": {
     "adm-zip": "^0.5.9",
-    "@electron/asar": "^3.2.0",
+    "asar": "^3.2.0",
     "builder-util": "^23.4.0",
     "fs-extra": "^11.1.1",
     "mime": "^3.0.0",
