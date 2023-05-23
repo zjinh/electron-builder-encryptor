@@ -56,7 +56,6 @@ export async function run(context: AfterPackContext, options: RunOptions = {}) {
   const packageJson = JSON.parse(
     await fs.promises.readFile(path.join(tempAppDir, 'package.json'), 'utf8')
   )
-  const exeName=context.packager.config.productName||packageJson.name
   const mainJsPath = path.join(tempAppDir, packageJson.main)
   const mainDir = path.dirname(mainJsPath)
 
@@ -80,9 +79,13 @@ export async function run(context: AfterPackContext, options: RunOptions = {}) {
   })
 
   // 可执行文件
-  let execPath = path.join(appOutDir, exeName)
+
+  let execPath = appOutDir
   if (context.packager.platform.name === 'windows') {
-    execPath = `${execPath}.exe`
+    const exeName=context.packager.config.productName||packageJson.name
+    execPath = `${path.join(appOutDir, exeName)}.exe`
+  }else {
+    execPath=path.join(appOutDir,'MacOs',context.packager.appInfo.productFilename)
   }
 
   const mainJsCPath = path.join(mainDir, 'main-c.jsc')

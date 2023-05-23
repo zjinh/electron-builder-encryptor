@@ -5,9 +5,10 @@ import { md5Salt } from './encrypt'
 /**
  * 解密
  * @param buf
+ * @param key
  * @returns
  */
-export function decAes(buf: Buffer, key = 'ft*xx9527') {
+export function decAes(buf: Buffer, key = 'absdQWER999') {
   const iv = buf.slice(0, 16)
   const encrypted = buf.slice(16)
   const decipher = crypto.createDecipheriv('aes-256-cbc', md5Salt(key), iv)
