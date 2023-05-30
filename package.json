@@ -1,6 +1,6 @@
 {
   "name": "@zjinh/electron-builder-encryptor",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "sideEffects": false,
   "author": "ZJINH",
   "description": "适用于electron-builder的加密打包工具",

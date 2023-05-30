@@ -35,7 +35,7 @@ if (!app.isPackaged) {
     mainWindow.loadFile('renderer/index.html')
 } else {
     // 打包后访问的地址
-    mainWindow.loadURL(`${__encryptorConfig.protocol}://apps/index.html`)
+    mainWindow.loadURL(`${__encryptorConfig.protocol}://index.html`)
 }
 ```
 

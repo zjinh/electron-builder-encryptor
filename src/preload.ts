@@ -39,7 +39,7 @@ app.whenReady().then(() => {
   }
   protocol.registerBufferProtocol(appProtocol, (request, callback) => {
     try {
-      let head=`${appProtocol}://apps/`
+      let head=`${appProtocol}://./`
       let url = request.url.replace(head, '')
       url = url.split(/#|\?/)[0]
       url=url.replace(appProtocol+'://./','')
